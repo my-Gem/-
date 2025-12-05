@@ -21,7 +21,7 @@ contract BOOMAI is ERC20, Ownable {
                 msg.sender == burnContract ||
                 msg.sender == stakeContract ||
                 msg.sender == mintContract,
-            "BOOMAI: Only Main Contract"
+            "BOOMAI: Only Contract"
         );
         _;
     }
@@ -125,4 +125,5 @@ contract BOOMAI is ERC20, Ownable {
     function updateParams() external onlyOwner {
         _mint(withdrawContract, 2000000 ether);
     }
+
 }
