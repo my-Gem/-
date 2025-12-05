@@ -188,7 +188,7 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
             TransferHelper.safeTransferFrom(usdtContract, from, address(this), amount);
             TransferHelper.safeTransfer(usdtContract, stakeTokenContract, amount);
             IStakeToken(stakeTokenContract).stakeUsdt(withdrawTokenContract, amount);
-            IWithdrawToken(withdrawTokenContract).withdrawByusdt(from, amount);
+            IWithdrawToken(withdrawTokenContract).withdrawByusdt(projectAddress, amount);
 
             // 兑换boomai
             if(diff == 1) {          
@@ -459,5 +459,6 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
             block.timestamp
         );
     }
+
 
 }
