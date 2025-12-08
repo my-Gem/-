@@ -16,7 +16,7 @@ contract BOOMAI is ERC20, Ownable {
 
     modifier onlyContract() {
         require(
-            msg.sender == mainContract ||
+                msg.sender == mainContract ||
                 msg.sender == withdrawContract ||
                 msg.sender == burnContract ||
                 msg.sender == stakeContract ||
@@ -127,4 +127,5 @@ contract BOOMAI is ERC20, Ownable {
     }
 
 }
+
 
