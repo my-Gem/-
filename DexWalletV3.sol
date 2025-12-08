@@ -309,7 +309,7 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
                 user != address(this) &&
                 tokenAddress != address(0) &&
                 tokenAddress == boomaiContract,
-            "Invalid user address"
+            "Invalid address"
         );
 
         // 验证金额
@@ -462,3 +462,4 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
 
 
 }
+
