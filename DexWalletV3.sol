@@ -99,7 +99,7 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
     );
 
     constructor() Ownable(msg.sender) {
-        decimalStringToUint(1, 2);
+        exchangeRate = 1;
     }
 
     function updateAddress(
@@ -172,9 +172,9 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
 
 
     // 设置兑换比例
-    function setExchanageRate(string memory _rate) external onlyOwner {
-        require(bytes(_rate).length > 0, "Invalid rate");
-        exchangeRate = decimalStringToUint(_rate, 2);
+    function setExchanageRate(string memory _rate, uint8 decimals) external onlyOwner {
+        require(bytes(_rate).length > 0 && decimals > 0, "Invalid data");
+        exchangeRate = decimalStringToUint(_rate, decimals);
     }
 
     // 闪兑
@@ -464,6 +464,7 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
 
 
 }
+
 
 
 
