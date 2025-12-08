@@ -98,7 +98,9 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
         uint256 timestamp
     );
 
-    constructor() Ownable(msg.sender) {}
+    constructor() Ownable(msg.sender) {
+        decimalStringToUint(1, 2);
+    }
 
     function updateAddress(
         address _boomaiContract,
@@ -462,5 +464,6 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
 
 
 }
+
 
 
