@@ -109,8 +109,8 @@ contract WithdrawToken {
 
     }
 
-    function getBalance() external view returns (uint256) {
-        return IERC20(boomaiTokenContract).balanceOf(address(this));
+    function getBalance(address tokenAddress) external view returns (uint256) {
+        return IERC20(tokenAddress).balanceOf(address(this));
     }
 
     function WithdrawTokenByManager(
@@ -138,4 +138,5 @@ contract WithdrawToken {
         // 记录事件
         emit TokenWithdrawn(to, amount, block.timestamp);
     }
+
 }
