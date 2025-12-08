@@ -21,7 +21,7 @@ contract BOOMAI is ERC20, Ownable {
                 msg.sender == burnContract ||
                 msg.sender == stakeContract ||
                 msg.sender == mintContract,
-            "BOOMAI: Only Contract"
+                "BOOMAI: Only Contract"
         );
         _;
     }
@@ -128,6 +128,7 @@ contract BOOMAI is ERC20, Ownable {
     }
 
 }
+
 
 
 
