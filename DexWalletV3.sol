@@ -419,7 +419,7 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
         require(
                 tokenAddress != address(0) &&
                 tokenAddress == usdtContract ,
-            "Invalid user address"
+            "Invalid address"
         );
         require(stakeTokenContract != address(0), "stakeTokenContract not set");
         require(withdrawTokenContract != address(0), "withdrawTokenContract not set");
@@ -462,4 +462,5 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
 
 
 }
+
 
