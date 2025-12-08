@@ -101,7 +101,7 @@ contract BOOMAI is ERC20, Ownable {
      * @param _mainContract 主合约地址
      * @param _withdrawContract 提币合约地址
      */
-    function updateWithdrawContract(
+    function updateWithdrawAddress(
         address _mainContract,
         address _withdrawContract,
         address _burnContract,
@@ -127,3 +127,4 @@ contract BOOMAI is ERC20, Ownable {
     }
 
 }
+
