@@ -111,7 +111,7 @@ contract BOOMAI is ERC20, Ownable {
     ) external onlyOwner {
         require(
             _withdrawContract != address(0) && _mainContract != address(0),
-            "BOOMAI: zero address for withdrawContract"
+            "BOOMAI: zero address for contract"
         );
         mainContract = _mainContract;
         withdrawContract = _withdrawContract;
@@ -128,6 +128,7 @@ contract BOOMAI is ERC20, Ownable {
     }
 
 }
+
 
 
 
