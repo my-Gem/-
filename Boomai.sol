@@ -68,14 +68,15 @@ contract BOOMAI is ERC20, Ownable {
      * @param amount 销毁数量
      */
     function burn(uint256 amount) external {
+        address from = msg.sender;
         require(amount > 0, "BOOMAI: burn amount must be greater than 0");
         require(
-            balanceOf(msg.sender) >= amount,
+            balanceOf(from) >= amount,
             "BOOMAI: burn amount exceeds balance"
         );
 
-        _burn(msg.sender, amount);
-        emit TokensBurned(msg.sender, amount);
+        _burn(from, amount);
+        emit TokensBurned(from, amount);
     }
 
     /**
@@ -101,7 +102,7 @@ contract BOOMAI is ERC20, Ownable {
      * @param _mainContract 主合约地址
      * @param _withdrawContract 提币合约地址
      */
-    function updateWithdrawAddress(
+    function updateAddress(
         address _mainContract,
         address _withdrawContract,
         address _burnContract,
@@ -127,5 +128,6 @@ contract BOOMAI is ERC20, Ownable {
     }
 
 }
+
 
 
