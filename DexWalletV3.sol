@@ -259,11 +259,11 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
         isOrderNumberExist[_orderNumber] = true;
 
         // 流程说明：
-        // 1. 用户授权 DexWalletV2：用户需要先调用 approve(DexWalletV2, amount)
-        // 2. DexWalletV2 从用户账户拉取 token（转到 DexWallet 自身）
-        // 3. DexWalletV2 把 token 转到 StakeToken 合约
-        // 4. DexWalletV2 调用 StakeToken.stake()，将 token 转到 BurnToken 合约
-        // 5. DexWalletV2 调用 BurnToken.burn()，销毁 token
+        // 1. 用户授权 DexWalletV3：用户需要先调用 approve(DexWalletV3, amount)
+        // 2. DexWalletV3 从用户账户拉取 token（转到 DexWalletV3 自身）
+        // 3. DexWalletV3 把 token 转到 StakeToken 合约
+        // 4. DexWalletV3 调用 StakeToken.stake()，将 token 转到 BurnToken 合约
+        // 5. DexWalletV3 调用 BurnToken.burn()，销毁 token
 
         // 步骤 1：从用户拉取 token 到 DexWallet 合约（需要用户授权 DexWallet）
         TransferHelper.safeTransferFrom(
@@ -464,6 +464,7 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
 
 
 }
+
 
 
 
