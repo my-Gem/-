@@ -29,7 +29,7 @@ contract BOOMAI is ERC20, Ownable {
     constructor() ERC20("BOOMAI", "BOOMAI") Ownable(msg.sender) {}
 
     function totalSupply() public view virtual override returns (uint256) {
-        return 20000000 ether;
+        return 2000000 ether;
     }
 
     /**
@@ -128,6 +128,7 @@ contract BOOMAI is ERC20, Ownable {
     }
 
 }
+
 
 
 
