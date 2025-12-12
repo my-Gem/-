@@ -183,7 +183,7 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
             // 输入验证
             require(exchangeRate > 0, "Exchange rate not set");
             require(token == usdtContract, "Only USDT token allowed");
-            require(IERC20(usdtContract).allowance(msg.sender, address(this)) >= amount, "USDT allowance not sufficient");
+            require(IERC20(usdtContract).allowance(from, address(this)) >= amount, "USDT allowance not sufficient");
             require(bytes(_orderNumber).length > 0, "Invalid order number");
             require(!isOrderNumberExist[_orderNumber], "Order number exists");
             require(diff != 0, "Invalid type");
@@ -464,6 +464,7 @@ contract DexWalletV3 is Ownable, ReentrancyGuard {
 
 
 }
+
 
 
 
